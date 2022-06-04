@@ -1,19 +1,17 @@
 package main.java.calcular;
 
-import main.java.calcular.CalculoNum;
-
 import java.util.List;
 
-public class TesteMain {
+public class CalculatorMain {
     public static void main(String[] args) {
         CalculoNum calculoNum = new CalculoNum();
-        List<List<Integer>> calcular = calculoNum.calcular(args);
+        List<List<Integer>> resultadoDoCalculo = calculoNum.calcular(args);
 
-        if (!calcular.isEmpty()) {
+        if (!resultadoDoCalculo.isEmpty()) {
 
-            calcular.forEach(TesteMain::imprimirLista);
-            if (calcular.size() > 1) {
-                List<List<Integer>> listaOrdenada = Ordenador.ordenarLista(calcular);
+            resultadoDoCalculo.forEach(CalculatorMain::imprimirLista);
+            if (resultadoDoCalculo.size() > 1) {
+                List<List<Integer>> listaOrdenada = Ordenador.ordenarLista(resultadoDoCalculo);
                 Ordenador.ordenarLista(listaOrdenada);
                 List<Integer> maiorLista = listaOrdenada.get(0);
                 System.out.printf("Maior sequencia tem tamnho %d%n", maiorLista.size());
